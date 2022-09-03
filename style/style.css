@@ -64,6 +64,7 @@ h1, h2, h3, p {
 padding-top: 9px;
 padding-bottom: 9px;
 position: relative;
+height: 50px;
 }
 
 .navigation {
@@ -111,18 +112,20 @@ letter-spacing: 0.02em;
     display: block;
     width: 24px;
     height: 24px;
+    transition: color .5s easy-in-out;
+    color:#fff
 }
 
-.social__link_fb {
-    background-image: url(../img/fb.svg);
+.social__link_fb:hover {
+    color: #166fe5;
 }
 
-.social__link_twitter {
-    background-image: url(../img/twitter.svg)
+.social__link_twitter:hover {
+    color: #65cdf9;
 }
 
-.social__link_instagram {
-    background-image: url(../img/instagram.svg)
+.social__link_instagram:hover {
+    color: #a00b7a;
 }
 
 .mute {
@@ -195,6 +198,7 @@ letter-spacing: 0.02em;
 
 .main {
     flex-grow: 1;
+    position: relative;
 }
 
 .main_index {
@@ -216,6 +220,9 @@ letter-spacing: 0.02em;
     }
 }
 .footer {
+height: 70px;
+position: relative;
+z-index: 500;
 padding-top: 10px;
 padding-bottom: 10px;
 display: flex;
@@ -237,6 +244,61 @@ margin-bottom: 6px;
     color: #6A6A6A;
 }
 
+.main-slider {
+    height: calc(100% -120px);
+}
+
+.slider-main {
+    height: 100%;
+}
+
+.slider-main__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination {
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute;
+    z-index: 400;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 15px;
+    background-color: black;
+    min-height: 144px;
+    padding-top: 12px;
+}
+
+.pagination__arrow {
+    display: block;
+    margin: 0 auto 20px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-top: 6px solid white;
+    background-color: transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.pagination__arrow:hover {
+    border-top-color: red;
+}
+
+.slider-thumbs {
+    max-width: 820px;
+}
+
+.slider-main__video {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
 @media (max-width: 1024px) {
     .mute {
         right: 20px;
@@ -248,6 +310,7 @@ margin-bottom: 6px;
 
 @media (max-width: 768px) {
     .header {
+        min-height: 50px;
         display: flex;
         align-items: center;
         padding-left: 20px;
@@ -347,8 +410,17 @@ margin-bottom: 6px;
         }
 
         .footer {
+            height: 50px;
             font-size: 6px;
             line-height: 7px;
+        }
+
+        .pagination__arow {
+            margin-bottom: 6px;
+        }
+
+        .pagination {
+            min-height: 80px;
         }
     }
 }
